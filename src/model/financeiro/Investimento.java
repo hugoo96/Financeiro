@@ -14,16 +14,16 @@ public class Investimento extends Financeiro{
 	}
 
 	@Override
-	public void efetuarTransacao(double valor, String setor) {
-		this.valorTransacao = valor;
-		this.setorBeneficiado = setor;	
+	public void efetuarTransacao(double valor, String setor, String descricao) {
+		setValorTransacao(valor);	
+		setSetorBeneficiado(setor);
+		setDescricaoTransacao(descricao);
 	}
 
 	@Override
 	public String toString() {
 
 		String dados = "";
-		dados += "Investimento";
 		dados += "\nSetor Beneficiado: " + this.setorBeneficiado;
 		
 		return dados + super.toString();

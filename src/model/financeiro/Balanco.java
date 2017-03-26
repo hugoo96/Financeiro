@@ -15,12 +15,12 @@ public class Balanco {
 		this.listaTransacoes.remove(transacao);
 	}
 	
-	public Financeiro buscaTransacaoPorCodigo(int codigoTransacao) {
+	public Financeiro buscaTransacaoPorCodigo(int id) {
 		
 		Financeiro transacao = null;
 		
 		for (Financeiro financeiro : listaTransacoes) {
-			if(codigoTransacao == financeiro.getCodigoTransacao()) {
+			if(id == financeiro.getID()) {
 				transacao = financeiro;
 				break;
 			} 

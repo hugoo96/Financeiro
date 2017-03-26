@@ -13,17 +13,16 @@ public class Entrada extends Financeiro{
 	}
 	
 	@Override
-	public void efetuarTransacao(double valor, String sacado) {
-		this.valorTransacao = valor;
-		this.sacado = sacado;
-		
+	public void efetuarTransacao(double valor, String sacado, String descricaoTransacao) {
+		setValorTransacao(valor);;
+		setSacado(sacado);
+		setDescricaoTransacao(descricaoTransacao);
 	}
 
 	@Override
 	public String toString() {
 		
 		String dados = "";
-		dados += "Entrada";
 		dados += "\nSacado: " + this.sacado;
 		
 		return dados + super.toString();

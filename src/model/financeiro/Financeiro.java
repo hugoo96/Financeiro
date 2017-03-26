@@ -2,16 +2,16 @@ package model.financeiro;
 
 public abstract class Financeiro {
 	
-	private int codigoTransacao;
+	private long id;
 	private String descricaoTransacao;
 	protected double valorTransacao;
 	
-	public int getCodigoTransacao() {
-		return codigoTransacao;
+	public long getID() {
+		return id;
 	}
 	
-	public void setCodigoTransacao(int codigoTransacao) {
-		this.codigoTransacao = codigoTransacao;
+	public void setID(long id) {
+		this.id = id;
 	}
 	
 	public String getDescricaoTransacao() {
@@ -25,15 +25,19 @@ public abstract class Financeiro {
 	public double getValorTransacao() {
 		return valorTransacao;
 	}
-
 	
-	public abstract void efetuarTransacao(double valor, String identificacao);
+	public void setValorTransacao(double valorTransacao) {
+		this.valorTransacao = valorTransacao;
+	}
+	
+	//identificacao - sacado, cedente ou investimento, atributos especificos das classes filhas
+	public abstract void efetuarTransacao(double valor, String identificacao, String descricao);
 
 	@Override
 	public String toString() {
 		
 		String dados = "";
-		dados += "\nCódigo: "+ this.codigoTransacao;
+		dados += "\nID: "+ this.id;
 		dados += "\nDescrição: "+ this.descricaoTransacao;
 		dados += "\nValor: "+ this.valorTransacao;
 		dados += "\n=========================";

@@ -1,33 +1,29 @@
 package model.financeiro;
 
+import java.sql.SQLException;
+import dao.EntradaDao;
+import dao.InvestimentoDao;
+import dao.SaidaDao;
+
 public class Principal {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
-		Financeiro entrada = new Entrada();
-		Financeiro saida = new Saida();
 		Investimento investimento = new Investimento();
+		Saida saida = new Saida();
 		
-		entrada.setCodigoTransacao(1);
-		entrada.efetuarTransacao(200, "Hugo Silvestre");
-		entrada.setDescricaoTransacao("Midias");
 		
-		saida.setCodigoTransacao(2);
-		saida.efetuarTransacao(600, "Funcionarios");
-		saida.setDescricaoTransacao("Salarios");
 		
-		investimento.setCodigoTransacao(4);
-		investimento.efetuarTransacao(4000, "Projetos");
-		investimento.setDescricaoTransacao("Novo espaço");
+		investimento.setID(5);
 		
-		Balanco balanco = new Balanco();
+		EntradaDao dao = new EntradaDao();
+		SaidaDao dao3 = new SaidaDao();
+		InvestimentoDao dao2 = new InvestimentoDao();
 		
-		balanco.adicionarTransacao(entrada);
-		balanco.adicionarTransacao(saida);
-		balanco.adicionarTransacao(investimento);
+	
+		System.out.println(dao3.listarSaidas());
 		
-		System.out.println(balanco.buscaTransacaoPorCodigo(5));
-		
+
 	}
 
 }

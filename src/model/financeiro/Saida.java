@@ -13,9 +13,10 @@ public class Saida extends Financeiro{
 	}
 
 	@Override
-	public void efetuarTransacao(double valor, String cedente) {
-		this.valorTransacao = valor;
-		this.cedente = cedente;
+	public void efetuarTransacao(double valor, String cedente, String descricao) {
+		setValorTransacao(valor);
+		setCedente(cedente);
+		setDescricaoTransacao(descricao);
 	}
 
 	@Override
